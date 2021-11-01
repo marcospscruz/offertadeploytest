@@ -1,0 +1,13 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h2><b>Pesquise e Economize!</b></h2>
+  <h4>Seja bem-vindo ao nosso site de Ofertas, um projeto desenvolvido por alunos da <b>UNIVESP</b> (Universidade Virtual do Estado de São Paulo)!</h4>
+  <p>Navegue pelas melhores promoções de produtos de <br> consumo nos mercados e comércios próximos de você!</p>
+  <h2>Nosso site atualmente conta com:</h2>
+  <ul>
+    <li><strong>Supermercados:</strong> {{ num_super }}</li>
+    <li><strong>Produtos:</strong> {{ num_prod }}</li>
+    <li><strong>Ofertas:</strong> {{ num_ofertas }}</li>
+  </ul>
+{% endblock %}

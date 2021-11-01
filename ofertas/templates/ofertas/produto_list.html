@@ -1,0 +1,33 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h2>Lista de Produtos</h2>
+  <br>
+  {% if produto_list %}
+  <table id="tabela" class="table table-hover"><thead>
+		<tr>
+			<th><input type="text" id="txtColuna1" value="" placeholder="Filtre por produto aqui"/></th>
+			<th></th>
+			<th></th>
+		</tr>
+		<tr>
+			<th>Produto</th>
+			<th>Quantidade</th>
+			<th>Observação</th>
+		</tr>
+    </thead>
+	<tbody>
+	{% for produto in produto_list %}
+      <tr>
+        <td><a href="{% url 'ondeencontrar' produto.id %}">{{ produto.desc }} {{ produto.marca }}</a></td>
+		<td><a href="{% url 'ondeencontrar' produto.id %}">{{ produto.qtd }} {{ produto.unid }}</a></td>
+		<td><a href="{% url 'ondeencontrar' produto.id %}">{{ produto.obs }}</a></td>
+		</a>
+      </tr>
+    {% endfor %}
+	</tbody>
+	</table>
+  {% else %}
+    <p>Não há produtos cadastrados.</p>
+  {% endif %} 
+{% endblock %}

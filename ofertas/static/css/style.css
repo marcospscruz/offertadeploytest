@@ -1,0 +1,17 @@
+body {
+    overflow-y: overlay !important;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+}
+
+.active {
+    background-color: #266fa0 !important;
+    border-color: #266fa0 !important;
+}
+
+.sidebar-nav {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+}
+

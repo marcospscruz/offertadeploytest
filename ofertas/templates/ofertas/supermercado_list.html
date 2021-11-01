@@ -1,0 +1,25 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h2>Lista de Supermercados</h2>
+  <br>
+  {% if supermercado_list %}
+  <table class="table table-hover"><thead>
+      <tr>
+        <th>Supermercado</th>
+      </tr>
+    </thead>
+	<tbody>
+	{% for supermercado in supermercado_list %}
+		<tr>
+        <td>
+			<a href="{% url 'ofertasporsuper' supermercado.id %}">{{ supermercado.nome }}</a>
+		</td>
+		</tr>
+    {% endfor %}
+	</tbody>
+	</table>
+  {% else %}
+    <p>Não há supermercados cadastrados.</p>
+  {% endif %} 
+{% endblock %}

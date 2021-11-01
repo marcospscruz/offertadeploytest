@@ -1,0 +1,31 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h2>Lista de Ofertas no estabelecimento {{ nomesuper }}</h2>
+  {% if ofertasporsuper %}
+  <table id="tabela" class="table table-hover"><thead>
+	   <tr>
+			<th><input type="text" id="txtColuna1" value="" placeholder="Filtre por produto aqui"/></th>
+			<th></th>
+			<th></th>
+	  </tr>  
+      <tr>
+        <th>Produto</th>
+        <th>Preço</th>
+        <th>Período</th>
+	  </tr>
+    </thead>
+	<tbody>
+	{% for ofertaporsuper in ofertasporsuper %}
+      <tr>
+        <td>{{ ofertaporsuper.pd }}</td>
+		<td>R${{ ofertaporsuper.preco }}</td>
+		<td>de {{ ofertaporsuper.inicio }} à {{ ofertaporsuper.fim }}</td>
+      </tr>
+    {% endfor %}
+	</tbody>
+	</table>
+  {% else %}
+    <p>Não há ofertas cadastradas para esse estabelecimento.</p>
+  {% endif %} 
+{% endblock %}
